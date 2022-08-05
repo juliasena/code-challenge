@@ -75,7 +75,7 @@ body{
 }
 .btn-finish{
   display: block;
-  background-color: #1E90FF;
+  background-color: red;
   border: none;
   border-radius: 5px;
   color: #fff;
