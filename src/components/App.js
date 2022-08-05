@@ -11,7 +11,7 @@ const Minicart = () => {
     return (
       <div className="container">
         <div className="container-img">
-          <img src={item.imageUrl} width="50px" height="50px" alt="logo produto" />
+          <img src={item.imageUrl} width="150px" height="150px" alt="logo produto" />
         </div>
         <div className="container-properties">
           <p className="brandName">{item.name}</p>
@@ -55,7 +55,7 @@ const Minicart = () => {
             </p>
           )}
         </div>
-        <button className="btn-finish">Finalizar compra</button>
+        <button className="btn-finish">FINALIZAR COMPRA</button>
       </footer>
     </div>
   );

@@ -5,26 +5,26 @@ body{
 .container-minicart {
   background-color: #fff;
   border-radius: 10px;
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 20px;
 }
 
 .header-minicart{
   border-bottom: 1px solid #bbbbbb;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .title-minicart{
   color: #000;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 700;
   text-align: center;
   margin: 0;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 .brandName{
-  margin: 0;
-  font-weight: 600;
-  font-size: 13px;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  font-size: 15px;
 }
 .listPrice{
   margin: 5px 0;
@@ -36,7 +36,7 @@ body{
 }
 .container-img{
   border: 1px solid #bbbbbb;
-  padding: 15px 10px;
+  padding: 15px;
 }
 .container{
   display: flex;
@@ -46,7 +46,7 @@ body{
 .container-properties{
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 .subtotal-freeshipping{
   border-top: 1px solid #bbbbbb;
@@ -68,20 +68,21 @@ body{
   background-color: #b1ffb1;
   max-width: 300px;
   margin: 0 auto;
-  border-radius: 15px;
+  border-radius: 20px;
   color: #008900;
   text-align: center;
-  padding: 5px 0;
+  padding: 10px 5px;
 }
 .btn-finish{
   display: block;
-  background-color: red;
+  background-color: #1E90FF;
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   width: 90%;
+  height: 50px;
   padding: 15px 0;
   cursor: pointer;
   margin: 15px auto;
@@ -89,10 +90,17 @@ body{
 .totalPrice{
   font-weight: 700;
 }
+.container-footer{
+  padding-bottom: 20px;
+}
 
 @media(min-width: 1025px){
   .container-minicart{
-    max-width: 500px;
+    max-width: 640px;
     margin: 0 auto;
+  }
+  .btn-finish{
+    width: 580px;
+    height: 60px;
   }
 }
