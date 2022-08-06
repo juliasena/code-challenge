@@ -1,34 +1,13 @@
-import "../components/css/minicart.css";
-import freeShiping from "../components/api/free-shiping.json";
-// import notFreeShiping from "../components/api/not-free-shiping.json"
 import React from "react";
+import "../components/css/minicart.css";
+import ProductProperties from "./ProductProperties";
+import freeShiping from "../components/api/free-shiping.json";
+// import notFreeShiping from "../components/api/not-free-shiping.json";
 
 const Minicart = () => {
-
-  const products = freeShiping.items;
-
-  const productProperties = products.map((item) => {
-    return (
-      <div className="container">
-        <div className="container-img">
-          <img src={item.imageUrl} width="150px" height="150px" alt="logo produto" />
-        </div>
-        <div className="container-properties">
-          <p className="brandName">{item.name}</p>
-          <p className="listPrice">{item.listPrice.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          })}</p>
-          <p className="sellingPrice">{item.sellingPrice.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          })}</p>
-        </div>
-      </div>
-    );
-  });
-
+  
   let totalProductsPrice = 0;
+  const products = freeShiping.items;
 
   products.forEach((item) => {
     totalProductsPrice += item.sellingPrice;
@@ -39,15 +18,24 @@ const Minicart = () => {
       <header className="header-minicart">
         <p className="title-minicart">Meu carrinho</p>
       </header>
-      <main>{productProperties}</main>
+      {products.map((item) => (
+        <ProductProperties
+          nameProduct={item.name}
+          imageUrl={item.imageUrl}
+          sellingPrice={item.sellingPrice}
+          listPrice={item.listPrice}
+        />
+      ))}
       <footer className="container-footer">
         <div className="subtotal-freeshipping">
           <div className="container-subtotal">
             <p className="subtotal">Total</p>
-            <p className="totalPrice">{totalProductsPrice.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-          })}</p>
+            <p className="totalPrice">
+              {totalProductsPrice.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </p>
           </div>
           {totalProductsPrice >= 10 && (
             <p className="free-shiping">
@@ -59,6 +47,6 @@ const Minicart = () => {
       </footer>
     </div>
   );
-}
+};
 
 export default Minicart;
